@@ -1,0 +1,465 @@
+theme: none
+disableNewStartMenuLayout: ''
+styleConstants:
+  - menuRadius = 10
+  - CommonBgBrush=<WindhawkBlur BlurAmount="25" TintColor="{ThemeResource SystemAltMediumColor}" TintOpacity="1"/>
+  - MainBgColor=<WindhawkBlur BlurAmount="25" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="1" />
+  - BorderColor={ThemeResource SystemControlForegroundBaseLowBrush}
+controlStyles:
+  - target: ScrollViewer > ScrollContentPresenter > Border
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="25" TintColor="{ThemeResource SystemAltMediumColor}" TintOpacity="0.0"/>
+      - CornerRadius=0
+      - BorderThickness=0
+      - BorderBrush=$BorderColor
+  - target: Border#AcrylicBorder
+    styles:
+      - Background=Transparent
+      - BorderThickness=0
+      - CornerRadius=$menuRadius
+      - Margin=0
+      - Padding=0
+  - target: StartMenu.StartBlendedFlexFrame
+    styles:
+      - ActualWidth=>frameWidth
+      - ActualHeight=>frameHeight
+  - target: StartMenu.StartBlendedFlexFrame > Grid#FrameRoot
+    styles:
+      - MinHeight={{frameHeight}}
+      - MaxHeight={{frameHeight}}
+      - Margin=0
+      - Padding=0
+  - target: Grid#MainMenu
+    styles:
+      - MinWidth={{frameWidth-222}}
+  - target: Border#AcrylicBorder
+    styles:
+      - CornerRadius=$menuRadius
+  - target: GridView#AllAppsGrid > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid
+    styles:
+      - MaximumRowsOrColumns:=
+  - target: ScrollViewer
+    styles:
+      - padding=10
+  - target: Border#AcrylicBorder
+    styles:
+      - Background:=$CommonBgBrush
+      - BorderThickness=0
+      - BorderBrush=$BorderColor
+      - CornerRadius=$menuRadius
+      - Margin=8
+      - Padding=0
+  - target: Border#AcrylicOverlay
+    styles:
+      - Visibility=Collapsed
+  - target: Border#BorderElement
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="25" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.3"/>
+      - BorderThickness=0
+      - CornerRadius=$menuRadius
+  - target: MenuFlyoutPresenter > Border
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="25" TintColor="{ThemeResource SystemAltMediumColor}" TintOpacity="0.8"/>
+      - BorderThickness=0
+      - CornerRadius=$menuRadius
+  - target: Border#AppBorder
+    styles:
+      - Background:=$CommonBgBrush
+      - BorderThickness=0
+      - CornerRadius=$menuRadius
+      - Margin=0
+  - target: Border#AccentAppBorder
+    styles:
+      - Background:=$CommonBgBrush
+      - BorderThickness=0
+      - CornerRadius=$menuRadius
+      - Margin=0
+  - target: Border#LayerBorder
+    styles:
+      - Visibility=Collapsed
+  - target: Border#TaskbarSearchBackground
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="25" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.3"/>
+      - BorderThickness=0
+      - CornerRadius=$menuRadius
+  - target: Border#ContentBorder@CommonStates > Grid#DroppedFlickerWorkaroundWrapper > Border
+    styles:
+      - Background@Normal:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.2"/>
+      - Background@PointerOver:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.3"/>
+      - BorderBrush@PointerOver:=Transparent
+      - Background@Pressed:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.3"/>
+      - BorderBrush@Pressed:=Transparent
+      - BorderThickness=0
+  - target: Button#ShowAllAppsButton > ContentPresenter@CommonStates
+    styles:
+      - Background@Normal:=<WindhawkBlur BlurAmount="25" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.8"/>
+      - Background@PointerOver:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.5"/>
+      - BorderBrush@PointerOver:=Transparent
+      - BorderThickness=0
+  - target: StartMenu.SearchBoxToggleButton > Grid > Border#BorderElement
+    styles:
+      - BorderBrush:=Transparent
+      - BorderThickness=0
+  - target: StartDocked.NavigationPaneButton#UserTileButton > Grid@CommonStates > Border
+    styles:
+      - Background@Normal:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.2"/>
+      - Background@PointerOver:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.5"/>
+      - BorderBrush@PointerOver:=Transparent
+      - BorderThickness=0
+  - target: StartDocked.AppListViewItem > Grid@CommonStates > Border
+    styles:
+      - Background:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.45"/>
+      - BorderBrush:=Transparent
+      - BorderThickness=0
+      - Margin@Normal=4
+  - target: StartDocked.NavigationPaneButton#PowerButton > Grid@CommonStates > Border
+    styles:
+      - Background:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.45"/>
+      - BorderBrush:=Transparent
+      - BorderThickness=0
+      - Margin@Normal=4
+  - target: ToolTip > ContentPresenter#LayoutRoot
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="25" TintColor="{ThemeResource SystemAltMediumColor}" TintOpacity="0.8"/>
+  - target: Border#dropshadow
+    styles:
+      - Visibility=Collapsed
+  - target: Border#StartDropShadow
+    styles:
+      - Visibility=Collapsed
+  - target: Grid#TopLevelSuggestionsRoot
+    styles:
+      - Visibility=Collapsed
+  - target: TextBlock#Text
+    styles:
+      - Foreground={ThemeResource TextFillColorPrimaryBrush}
+  - target: Microsoft.UI.Xaml.Controls.DropDownButton > Grid#RootGrid
+    styles:
+      - Background:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.3"/>
+      - BorderBrush:=Transparent
+      - BorderThickness=0
+  - target: Button > Grid@CommonStates > Border
+    styles:
+      - Background@Normal:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.2"/>
+      - Background@PointerOver:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.3"/>
+      - BorderBrush@PointerOver:=Transparent
+      - BorderThickness=0
+  - target: DropDownButton
+    styles:
+      - Background:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.2"/>
+  - target: Button#Header > Border#Border@CommonStates
+    styles:
+      - Background:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0"/>
+      - BorderBrush@PointerOver:=Transparent
+      - Background@PointerOver:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.8"/>
+      - BorderThickness=0
+  - target: StartMenu.FolderModal > Grid > Border
+    styles:
+      - Background:=$CommonBgBrush
+      - BorderBrush:=Transparent
+      - BorderThickness=0
+      - CornerRadius=$menuRadius
+  - target: ListViewItem > Grid#ContentBorder@CommonStates
+    styles:
+      - BorderBrush:=Transparent
+      - BorderBrush@PointerOver:=Transparent
+      - Background:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0"/>
+      - Background@PointerOver:=<RevealBorderBrush Color="Transparent" TargetTheme="1" Opacity="0.9"/>
+      - BorderThickness=0
+      - CornerRadius=5
+  - target: StackPanel#TimeAndDatePanel
+    styles:
+      - VerticalAlignment=Top
+      - HorizontalAlignment=Left
+      - Margin=48,24,48,0
+  - target: StackPanel#TimePanel
+    styles:
+      - HorizontalAlignment=Left
+  - target: StackPanel#TimePanel > TextBlock#Time
+    styles:
+      - TextAlignment=Left
+  - target: StackPanel#TimeAndDatePanel > TextBlock#Date
+    styles:
+      - TextAlignment=Left
+      - HorizontalAlignment=Left
+  - target: TextBlock#SpeedBumpText
+    styles:
+      - TextAlignment=Left
+  - target: TextBlock#SecureGestureIcon
+    styles:
+      - Visibility=Collapsed
+  - target: TextBlock#SecureGestureText
+    styles:
+      - TextAlignment=Left
+  - target: Grid#HotspotContainer
+    styles:
+      - Visibility=Collapsed
+  - target: Grid#LockScreenTextContent > Grid
+    styles:
+      - VerticalAlignment:=
+      - RowDefinitions:=
+  - target: Grid#WidgetCanvasPanel
+    styles:
+      - Margin=32
+  - target: StackPanel#WidgetsContainer
+    styles:
+      - HorizontalAlignment=Left
+  - target: StackPanel#WidgetGroupPanel
+    styles:
+      - Margin=0
+  - target: Grid#WidgetFrameGrid
+    styles:
+      - Background:=$MainBgColor
+      - BorderBrush=$BorderColor
+      - BorderThickness=1
+      - CornerRadius=$menuRadius
+  - target: ContentPresenter#WidgetContent
+    styles:
+      - Background=Transparent
+  - target: Border#WidgetBorder
+    styles:
+      - BorderThickness=0
+  - target: |
+      StackPanel#WidgetGroupPanel > ContentPresenter > LockCanvas.LockCanvasWidgetFrame > Grid > Border
+    styles:
+      - BorderThickness=0
+  - target: Grid#MediaControlsContainer
+    styles:
+      - HorizontalAlignment=Right
+      - VerticalAlignment=Top
+      - Margin=0,32,32,0
+  - target: Grid#MediaTransportControls
+    styles:
+      - Background:=$MainBgColor
+      - BorderBrush=$BorderColor
+      - Width=600
+      - Height=242
+      - CornerRadius=$menuRadius
+      - Padding=20
+  - target: Grid#ThumbnailImageArea
+    styles:
+      - Width=200
+      - Height=200
+      - Margin=0,0,20,0
+  - target: Grid#ThumbnailImageArea > Border
+    styles:
+      - CornerRadius=$menuRadius
+  - target: Grid#MediaTransportControls > StackPanel
+    styles:
+      - VerticalAlignment=Top
+      - Margin=0,10,0,0
+  - target: Grid#MediaTransportControls > StackPanel > TextBlock
+    styles:
+      - TextAlignment=Left
+  - target: Grid#MediaTransportControls > StackPanel > TextBlock[1]
+    styles:
+      - Foreground={ThemeResource TextFillColorPrimaryBrush}
+      - FontSize=24
+      - TextWrapping=2
+      - MaxLines=2
+  - target: Grid#MediaTransportControls > StackPanel > TextBlock[2]
+    styles:
+      - Foreground={ThemeResource TextFillColorSecondaryBrush}
+      - FontSize=20
+      - Margin=0,4,0,0
+  - target: ListView
+    styles:
+      - HorizontalAlignment=Center
+      - VerticalAlignment=Bottom
+      - Grid.Column=1
+      - Height=52
+      - Margin=0,0,0,20
+  - target: Windows.UI.Xaml.Controls.Primitives.RepeatButton#PreviousButton
+    styles:
+      - Margin=4,0,0,0
+  - target: |
+      Windows.UI.Xaml.Controls.Primitives.RepeatButton#PreviousButton > ContentPresenter#ContentPresenter@CommonStates > TextBlock
+    styles:
+      - Foreground@Normal={ThemeResource TextFillColorPrimaryBrush}
+      - Foreground@PointerOver={ThemeResource TextFillColorPrimaryBrush}
+      - Text=
+      - FontSize=20
+  - target: Button#PlayPauseButton
+    styles:
+      - Margin=26,0,26,0
+  - target: |
+      Button#PlayPauseButton > ContentPresenter#ContentPresenter@CommonStates > TextBlock
+    styles:
+      - Foreground@Normal={ThemeResource TextFillColorPrimaryBrush}
+      - Foreground@PointerOver={ThemeResource TextFillColorPrimaryBrush}
+      - FontSize=20
+  - target: Windows.UI.Xaml.Controls.Primitives.RepeatButton#NextButton
+    styles:
+      - Margin=0,0,4,0
+  - target: |
+      Windows.UI.Xaml.Controls.Primitives.RepeatButton#NextButton > ContentPresenter#ContentPresenter@CommonStates > TextBlock
+    styles:
+      - Foreground@Normal={ThemeResource TextFillColorPrimaryBrush}
+      - Foreground@PointerOver={ThemeResource TextFillColorPrimaryBrush}
+      - Text=
+      - FontSize=20
+  - target: |
+      Windows.UI.Xaml.Controls.Primitives.RepeatButton#PreviousButton > ContentPresenter#ContentPresenter@CommonStates
+    styles:
+      - Background@Normal:=<SolidColorBrush Color="{ThemeResource ControlFillColorDefault}" />
+      - Background@PointerOver:=<SolidColorBrush Color="{ThemeResource ControlFillColorSecondary}" />
+      - Background@Pressed:=<SolidColorBrush Color="{ThemeResource ControlFillColorTertiary}" />
+      - |
+        BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"> <GradientStop Color="{ThemeResource ControlStrokeColorSecondary}" Offset="0.1" /> <GradientStop Color="{ThemeResource ControlStrokeColorDefault}" Offset="0.11" /> </LinearGradientBrush>
+      - BorderThickness=1
+      - Width=44
+      - Height=44
+      - Padding=0
+  - target: |
+      Button#PlayPauseButton > ContentPresenter#ContentPresenter@CommonStates
+    styles:
+      - Background@Normal:=<SolidColorBrush Color="{ThemeResource ControlFillColorDefault}" />
+      - Background@PointerOver:=<SolidColorBrush Color="{ThemeResource ControlFillColorSecondary}" />
+      - Background@Pressed:=<SolidColorBrush Color="{ThemeResource ControlFillColorTertiary}" />
+      - |
+        BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"> <GradientStop Color="{ThemeResource ControlStrokeColorSecondary}" Offset="0.1" /> <GradientStop Color="{ThemeResource ControlStrokeColorDefault}" Offset="0.11" /> </LinearGradientBrush>
+      - BorderThickness=1
+      - Width=44
+      - Height=44
+      - Padding=0
+  - target: |
+      Windows.UI.Xaml.Controls.Primitives.RepeatButton#NextButton > ContentPresenter#ContentPresenter@CommonStates
+    styles:
+      - Background@Normal:=<SolidColorBrush Color="{ThemeResource ControlFillColorDefault}" />
+      - Background@PointerOver:=<SolidColorBrush Color="{ThemeResource ControlFillColorSecondary}" />
+      - Background@Pressed:=<SolidColorBrush Color="{ThemeResource ControlFillColorTertiary}" />
+      - |
+        BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"> <GradientStop Color="{ThemeResource ControlStrokeColorSecondary}" Offset="0.1" /> <GradientStop Color="{ThemeResource ControlStrokeColorDefault}" Offset="0.11" /> </LinearGradientBrush>
+      - BorderThickness=1
+      - Width=44
+      - Height=44
+      - Padding=0
+  - target: Grid#AlarmsIconPanelPadding
+    styles:
+      - Visibility=Collapsed
+  - target: Grid#AlarmsIconPanel
+    styles:
+      - Visibility=Collapsed
+  - target: StartMenu.SearchBoxToggleButton
+    styles:
+      - HorizontalAlignment=Center
+      - Width=520
+  - target: Border#TaskbarSearchBackground
+    styles:
+      - HorizontalAlignment=Center
+      - Width=520
+  - target: TextBlock#PinnedListHeaderText
+    styles:
+      - Visibility=Collapsed
+      - Height=0
+      - Margin=0
+  - target: GridViewItem
+    styles:
+      - Width=256
+      - Height=128
+      - Margin=6
+  - target: GridViewItem > Grid#ContentBorder
+    styles:
+      - Width=256
+      - Height=128
+      - HorizontalAlignment=Center
+      - VerticalAlignment=Center
+      - CornerRadius=$menuRadius
+  - target: Border#LogoPlate
+    styles:
+      - Width=72
+      - Height=72
+      - HorizontalAlignment=Center
+      - VerticalAlignment=Center
+  - target: Border#LogoPlate > Image
+    styles:
+      - Width=64
+      - Height=64
+      - HorizontalAlignment=Center
+      - VerticalAlignment=Center
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#MainMenu > Grid#MainContent > Frame#StartFrame > ContentPresenter > StartMenu.StartHome > Grid#PageRoot > SemanticZoom#TopLevelRoot > Grid > ScrollViewer#ScrollViewer > ScrollContentPresenter#ScrollContentPresenter > Grid > ContentPresenter#ZoomedInPresenter > GridView#AllAppsGrid > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ContentControl > ContentPresenter > Grid#TopLevelHeader > StartMenu.PinnedList#StartMenuPinnedList > Grid#Root > GridView#PinnedList > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid > GridViewItem > Border#ContentBorder > Grid#DroppedFlickerWorkaroundWrapper > ContentPresenter#ContentPresenter > Grid
+    styles:
+      - Width=246
+      - MaxWidth=256
+  - target: StartMenu.PinnedListTile > Grid#Root > Grid#DisplayNameAndDownloadIconContainer > TextBlock#DisplayName
+    styles:
+      - FontSize=23
+      - MaxWidth=256
+      - TextAlignment=Center
+      - HorizontalAlignment=Center
+      - VerticalAlignment=Top
+      - TextTrimming=WordEllipsis
+      - Margin=0,6,0,-24
+  - target: StartMenu.PinnedList#StartMenuPinnedList
+    styles:
+      - HorizontalAlignment=Center
+      - VerticalAlignment=Top
+      - Width={{frameWidth-200}}
+      - MaxWidth={{frameWidth-200}}
+      - Height={{frameHeight}}
+      - MaxHeight={{frameHeight}}
+      - Margin=0,0,0,0
+  - target: StartMenu.PinnedList#StartMenuPinnedList GridView#PinnedList
+    styles:
+      - HorizontalAlignment=Center
+      - HorizontalContentAlignment=Center
+  - target: StartMenu.PinnedList#StartMenuPinnedList ItemsWrapGrid
+    styles:
+      - HorizontalAlignment=Center
+      - HorizontalContentAlignment=Center
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#MainMenu > Grid#MainContent > Frame#StartFrame > ContentPresenter > StartMenu.StartHome > Grid#PageRoot > SemanticZoom#TopLevelRoot > Grid > ScrollViewer#ScrollViewer > ScrollContentPresenter#ScrollContentPresenter > Grid > ContentPresenter#ZoomedInPresenter > GridView#AllAppsGrid > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ContentControl > ContentPresenter > Grid#TopLevelHeader > StartMenu.PinnedList#StartMenuPinnedList > Grid#Root > GridView#PinnedList > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid > GridViewItem > Border#ContentBorder > Grid#DroppedFlickerWorkaroundWrapper > ContentPresenter#ContentPresenter > Grid > StartMenu.PinnedListTile > Grid#Root > Grid#DisplayNameAndDownloadIconContainer > TextBlock#DisplayName
+    styles:
+      - Width=256
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#MainMenu > Grid#MainContent > Frame#StartFrame > ContentPresenter > StartMenu.StartHome > Grid#PageRoot > SemanticZoom#TopLevelRoot > Grid > ScrollViewer#ScrollViewer > ScrollContentPresenter#ScrollContentPresenter > Grid > ContentPresenter#ZoomedInPresenter > GridView#AllAppsGrid > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid > GridViewItem > Border#ContentBorder > Grid#DroppedFlickerWorkaroundWrapper > ContentPresenter#ContentPresenter > Grid
+    styles:
+      - Width=256
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#MainMenu > Grid#MainContent > Frame#StartFrame > ContentPresenter > StartMenu.StartHome > Grid#PageRoot > SemanticZoom#TopLevelRoot > Grid > ScrollViewer#ScrollViewer > ScrollContentPresenter#ScrollContentPresenter > Grid > ContentPresenter#ZoomedInPresenter > GridView#AllAppsGrid > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid > GridViewItem > Border#ContentBorder > Grid#DroppedFlickerWorkaroundWrapper > ContentPresenter#ContentPresenter > Grid
+    styles:
+      - Width=256
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#MainMenu > Grid#MainContent > Frame#StartFrame > ContentPresenter > StartMenu.StartHome > Grid#PageRoot > SemanticZoom#TopLevelRoot > Grid > ScrollViewer#ScrollViewer > ScrollContentPresenter#ScrollContentPresenter > Grid > ContentPresenter#ZoomedInPresenter > GridView#AllAppsGrid > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid > GridViewItem > Border#ContentBorder > Grid#DroppedFlickerWorkaroundWrapper > ContentPresenter#ContentPresenter > Grid > StartMenu.PinnedListTile > Grid#Root > Grid#LogoContainer
+    styles:
+      - Width=48
+      - Height=48
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#MainMenu > Grid#MainContent > Frame#StartFrame > ContentPresenter > StartMenu.StartHome > Grid#PageRoot > SemanticZoom#TopLevelRoot > Grid > ScrollViewer#ScrollViewer > ScrollContentPresenter#ScrollContentPresenter > Grid > ContentPresenter#ZoomedInPresenter > GridView#AllAppsGrid > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid > GridViewItem > Border#ContentBorder > Grid#DroppedFlickerWorkaroundWrapper > ContentPresenter#ContentPresenter > Grid > StartMenu.PinnedListTile > Grid#Root > Grid#LogoContainer > Image#Logo
+    styles:
+      - Width=48
+      - Height=48
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#RightCompanionContainerGrid > StartMenu.StartMenuCompanion#RightCompanion
+    styles:
+      - Margin=0
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#RightCompanionContainerGrid > StartMenu.StartMenuCompanion#RightCompanion > Grid#CompanionRoot > Grid#MainContent > ContentPresenter#PrimaryCardContainer > Grid > Grid > Grid > ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > ListView
+    styles:
+      - MinHeight={{frameHeight/2}}
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#MainMenu > Grid#MainContent > Frame#StartFrame > ContentPresenter > StartMenu.StartHome > Grid#PageRoot > SemanticZoom#TopLevelRoot > Grid > ScrollViewer#ScrollViewer > ScrollContentPresenter#ScrollContentPresenter > Grid > ContentPresenter#ZoomedInPresenter > GridView#AllAppsGrid > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ContentControl > ContentPresenter > Grid#TopLevelHeader > StartMenu.PinnedList#StartMenuPinnedList > Grid#Root > GridView#PinnedList > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid > GridViewItem > Border#ContentBorder > Grid#DroppedFlickerWorkaroundWrapper > ContentPresenter#ContentPresenter > Grid > StartMenu.PinnedListTile > Grid#Root > Grid#DisplayNameAndDownloadIconContainer > TextBlock#DisplayName
+    styles:
+      - TextWrapping=Wrap
+      - MaxLines=2
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#MainMenu > Grid#MainContent > Grid
+    styles:
+      - Visibility=Collapsed~~~
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#MainMenu > Grid#MainContent > Frame#StartFrame > ContentPresenter > StartMenu.StartHome
+    styles:
+      - margin=0,-100,0,20
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#MainMenu > Grid#MainContent > Frame#StartFrame > ContentPresenter > StartMenu.StartHome > Grid#PageRoot > SemanticZoom#TopLevelRoot > Grid > ScrollViewer#ScrollViewer > ScrollContentPresenter#ScrollContentPresenter > Grid > ContentPresenter#ZoomedInPresenter > GridView#AllAppsGrid > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ContentControl > ContentPresenter > Grid#TopLevelHeader > StartMenu.PinnedList#StartMenuPinnedList > Grid#Root > GridView#PinnedList > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid > GridViewItem > Border#ContentBorder > Grid#DroppedFlickerWorkaroundWrapper > ContentPresenter#ContentPresenter > Grid > StartMenu.PinnedListCollapsedFolder > Grid#Root > TextBlock#DisplayName
+    styles:
+      - FontSize=25
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#MainMenu > Grid#MainContent > Frame#StartFrame > ContentPresenter > StartMenu.StartHome > Grid#PageRoot > SemanticZoom#TopLevelRoot > Grid > ScrollViewer#ScrollViewer > ScrollContentPresenter#ScrollContentPresenter > Grid > ContentPresenter#ZoomedInPresenter > GridView#AllAppsGrid > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ContentControl > ContentPresenter > Grid#TopLevelHeader > StartMenu.PinnedList#StartMenuPinnedList > Grid#Root > GridView#PinnedList > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid > GridViewItem >Border#ContentBorder > Grid#DroppedFlickerWorkaroundWrapper > ContentPresenter#ContentPresenter > Grid > StartMenu.PinnedListCollapsedFolder > Grid#Root > Grid#LogosContainer
+    styles:
+      - Height=56
+      - Width=56
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#MainMenu > Grid#MainContent > Frame#StartFrame > ContentPresenter > StartMenu.StartHome > Grid#PageRoot > SemanticZoom#TopLevelRoot > Grid > ScrollViewer#ScrollViewer > ScrollContentPresenter#ScrollContentPresenter > Grid > ContentPresenter#ZoomedInPresenter > GridView#AllAppsGrid > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ContentControl > ContentPresenter > Grid#TopLevelHeader > StartMenu.PinnedList#StartMenuPinnedList > Grid#Root > GridView#PinnedList > Border > ScrollViewer#ScrollViewer > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid > GridViewItem > Border#ContentBorder > Grid#DroppedFlickerWorkaroundWrapper > ContentPresenter#ContentPresenter > Grid
+    styles:
+      - Height=128
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#RightCompanionContainerGrid > Border#RightCompanionDropShadow
+    styles:
+      - Visibility=Collapsed
+  - target: ScrollViewer > ScrollContentPresenter > Border > StartMenu.StartBlendedFlexFrame > Grid#FrameRoot > Grid#AnimationRoot > Grid#RightCompanionContainerGrid > Border#RightCompanionDropShadowDismissTarget
+    styles:
+      - Visibility=Collapsed
+themeResourceVariables:
+  - ''
+webContentStyles:
+  - target: ''
+    styles:
+      - ''
+webContentCustomJs: ''
